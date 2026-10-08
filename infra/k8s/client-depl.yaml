@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: mehul3288/ticketing-client
+          image: mehul3288/client
 ---
 apiVersion: v1
 kind: Service

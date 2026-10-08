@@ -4,6 +4,8 @@ import { headers } from 'next/headers';
 export default async function buildClient() {
   if (typeof window === 'undefined') {
     // Server-side (SSR)
+    console.log("From SSR");
+    
     const headersList = await headers();
     const cookie = headersList.get('cookie');
 
