@@ -8,11 +8,13 @@ export default async function buildClient() {
     const cookie = headersList.get('cookie');
 
     return axios.create({
+      // baseURL:
+      //   'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local',
       baseURL:
-        'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local',
+            "http://mehulticketingappprod.in/",
       headers: {
         'X-Forwarded-Proto': headersList.get('x-forwarded-proto') || 'https',
-        Host: headersList.get('host') || 'ticketing.dev',
+        Host: headersList.get('host') || 'mehulticketingappprod.in',
         Cookie: cookie ? decodeURIComponent(cookie) : undefined,
       }
     });
